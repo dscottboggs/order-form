@@ -1,0 +1,6 @@
+database:
+  host: "172.23.0.2"
+site title: Owen's Free Plants
+products:
+  - name: willow
+    description: A cutting from a willow tree

@@ -1,0 +1,23 @@
+name: order-form
+version: 0.1.0
+
+authors:
+  - D. Scott Boggs <scott@tams.tech>
+
+targets:
+  order-form:
+    main: src/order-form.cr
+
+crystal: 1.2.2
+
+license: MIT
+
+dependencies:
+  cryomongo:
+    github: elbywan/cryomongo
+  xdg:
+    github: dscottboggs/xdg.cr
+    version: ~= 1.2.1
+  kemal:
+    github: kemalcr/kemal
+    version: ~> 1.1.0

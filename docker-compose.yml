@@ -1,0 +1,7 @@
+version: "3.5"
+
+services:
+  database:
+    image: mongo:4
+    expose:
+      - 27017:27017
