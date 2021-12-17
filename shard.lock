@@ -1,9 +1,5 @@
 version: 2.0
 shards:
-  backtracer:
-    git: https://github.com/sija/backtracer.cr.git
-    version: 1.2.1
-
   bson:
     git: https://github.com/elbywan/bson.cr.git
     version: 0.3.3
@@ -20,25 +16,13 @@ shards:
     git: https://github.com/636f7374/durian.cr.git
     version: 0.1.5
 
-  exception_page:
-    git: https://github.com/crystal-loot/exception_page.git
-    version: 0.2.1
-
   ipaddress:
     git: https://github.com/64726f70/ipaddress.cr.git
     version: 1.0.0
 
-  kemal:
-    git: https://github.com/kemalcr/kemal.git
+  magic:
+    git: https://github.com/dscottboggs/magic.cr.git
     version: 1.1.0
-
-  kilt:
-    git: https://github.com/jeromegn/kilt.git
-    version: 0.6.1
-
-  radix:
-    git: https://github.com/luislavena/radix.git
-    version: 0.4.1
 
   wrench:
     git: https://github.com/73686f77/wrench.cr.git

@@ -18,6 +18,5 @@ dependencies:
   xdg:
     github: dscottboggs/xdg.cr
     version: ~= 1.2.1
-  kemal:
-    github: kemalcr/kemal
-    version: ~> 1.1.0
+  magic:
+    github: dscottboggs/magic.cr

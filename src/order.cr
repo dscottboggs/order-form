@@ -37,7 +37,7 @@ module OrderForm
             message:      "failed to find product",
             product_name: name,
           })
-          log "warning: visitor requested product which is not in the configuration: '#{name}'"
+          STDERR.puts "warning: visitor requested product which is not in the configuration: '#{name}'"
           nil
         end
       end
