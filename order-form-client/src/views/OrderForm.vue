@@ -132,7 +132,7 @@ export default Vue.extend({
     }
   },
   created() {
-    fetch('http://localhost:21229/products')
+    fetch(`/products`)
       .then(resp => {
         if (resp.ok) {
           return resp.json()

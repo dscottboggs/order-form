@@ -11,6 +11,7 @@
     "buefy": "^0.9.13",
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
+    "vue-router": "^3.2.0",
     "vuex": "^3.4.0"
   },
   "devDependencies": {
@@ -18,6 +19,7 @@
     "@typescript-eslint/parser": "^4.18.0",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
     "@vue/cli-plugin-typescript": "~4.5.0",
     "@vue/cli-plugin-vuex": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
@@ -49,14 +51,14 @@
     },
     "rules": {}
   },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
-  ],
   "prettier": {
     "arrowParens": "avoid",
     "semi": false,
     "singleQuote": true
-  }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
 }
