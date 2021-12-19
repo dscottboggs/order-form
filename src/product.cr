@@ -27,14 +27,14 @@ module OrderForm
       def initialize(bson : BSON)
         @name, @description = bson["name"], bson["description"]
         @image = bson["image"]?
-        @status = bson["status"].try(&->Status.new(Int32)) || :created
+        @status = bson["status"].try(&->Status.parse(String)) || :created
       end
 
       def to_bson(bson = BSON.new)
         {% for ivar in %w[name description image] %}
           bson[{{ivar}}] = @{{ivar.id}}
         {% end %}
-        bson["status"] = @status.value
+        bson["status"] = @status.to_s
         bson
       end
     end
