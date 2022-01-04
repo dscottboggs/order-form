@@ -1,5 +1,5 @@
 database:
-  host: mongo
+  host: order-form-mongo.local
 
 site title: Operation WinterGreen
 products:
@@ -20,4 +20,4 @@ products:
     description: This is a cutting from an overgrown pothos with 2-4 leaves that has been rooting in water for several weeks. I don't have many of these. 4 inches or so. It has a vining habit with heart-shaped leaves. Water it less often, it tolerates drought. Leaves are vareigated with white and yellow. NOT PET FRIENDLY!
     soil type: 1-1 ratio fluffed potting mix and cactus mix, or just the former
     max: 1
-client: /client
+client: /web-services/order-form/client

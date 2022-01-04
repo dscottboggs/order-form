@@ -16,7 +16,7 @@ module OrderForm
   ) do
     record Serialized,
       contact_info : Contact,
-      order : Array(String),
+      order : Hash(String, Int32),
       sms : Bool,
       address : String,
       soil : Int32,
@@ -29,9 +29,9 @@ module OrderForm
 
     def self.create(body, db collection)
       order = Serialized.from_json body
-      products = order.order.compact_map do |name|
-        if product = OrderForm.config.products.find &.name.== name
-          product.for_order
+      products = order.order.compact_map do |id, quantity|
+        if product = OrderForm.config.products.find &.id.== id
+          product.for_order quantity
         else
           OrderForm.errors.insert_one({
             message:      "failed to find product",

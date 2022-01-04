@@ -3,5 +3,27 @@ version: "3.5"
 services:
   database:
     image: mongo:4
-    expose:
-      - 27017:27017
+    expose: [27017]
+    networks: [internal]
+    volumes:
+      - ./mounts/db:/data/db
+    labels: [traefik.enable=false]
+  service:
+    build: .
+    expose: [21229]
+    networks:
+      - web
+      - internal
+    labels:
+      traefik.enable: "true"
+      traefik.frontend.rule: Host:free-plants.tams.tech
+      traefik.docker.network: web
+    volumes:
+      - ./config.yml:/etc/order-form.yml
+      - ./order-form-client:/client
+
+networks:
+  internal:
+    internal: true
+  web:
+    external: true

@@ -1,0 +1,13 @@
+[Unit]
+Description=Plant giveaway order form
+
+[Service]
+Environment=config_file=/web-services/order-form/config.yml
+Environment=HOME=/web-services/order-form
+ExecStartPre=/usr/bin/docker run -d --rm --name order-form-mongo --label traefik.enable=false --expose 27017 --volume /web-services/order-form/db:/data/db mongo:4
+ExecStartPre=/bin/sh -c "sed -i '/order-form-mongo.local$/d' /etc/hosts && echo $(docker inspect --format {{.NetworkSettings.Networks.bridge.IPAddress}} order-form-mongo)  order-form-mongo.local >> /etc/hosts"
+ExecStart=/web-services/order-form/bin/order-form
+ExecStop=/usr/bin/docker stop order-form-mongo
+
+[Install]
+WantedBy=multi-user.target
